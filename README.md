@@ -1,4 +1,11 @@
 # Permutations
+
+**Attention please** 
+
+This program was created just to deliver some usefull results as fast as possible, the quality and readability of the code was in the 'second order'. 
+
+## Overview
+
 This is a simple program written to resolve a problem described on one of the Facebook groups connected to programming.
 
 The problem:
@@ -29,7 +36,7 @@ The results can also interpreted in any other way.
 
 This application was build using .Net Core 2.2 on Linux. 
 
-It should by build by typing:
+It should be built by typing:
 
 ``` dotnet build ```
 
@@ -38,3 +45,5 @@ But it will enough if you just type:
 ``` dotnet run ``` - the application will be built and run.
 
 This project also should build and run in Visual Studio (I didn't check it, I only build&run it using Bash)
+
+Feel free to use it and rewrite in other languages.
