@@ -5,13 +5,16 @@ namespace permutations
     public static class Permutations
     { 
         private static List<string> list;
-        public static List<string> BuildPermutations(this string baseString)
+        public static List<string> BuildPermutations(this string categories)
         {
             list = new List<string>();
 
-            StartGeneratingPermutations(baseString);
+            StartGeneratingPermutations(categories);
 
-            return list;
+            var toReturn = new List<string>(list);
+            list = null;
+
+            return toReturn;
         }
 
         private static void StartGeneratingPermutations(string text)

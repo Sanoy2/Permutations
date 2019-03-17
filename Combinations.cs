@@ -5,7 +5,7 @@ namespace permutations
 {
     public static class Combinations
     {
-        public static List<string> BuildCombinations(SetOfCategories set)
+        public static List<string> BuildCombinations(SetOfCategories set, char? separator = null)
         {
             var list = new List<string>();
 
@@ -17,22 +17,17 @@ namespace permutations
             {
                 foreach (var item in categories)
                 {
-                    tmp += item.GetElement();
+                    tmp += item.GetCurrent();
+                    tmp += separator;
                 }
                 list.Add(tmp);
                 tmp = "";
 
                 for (int i = 0; i < categories.Count; i++)
                 {
-                    if(categories[i].WillRotate())
-                    {
-                        categories[i].Increment();
-                    }
-                    else
-                    {
-                        categories[i].Increment();
+                    categories[i].MoveForward();
+                    if(!categories[i].IsNextMoveReset())
                         break;
-                    }
                 }
             }
 

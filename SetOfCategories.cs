@@ -17,10 +17,10 @@ namespace permutations
             }
         }
 
-        public void BuildCombinations()
+        public void BuildCombinations(char? separator = null)
         {
             BuildPermutations();
-            this.CategoriesCombinations = Combinations.BuildCombinations(this);
+            CategoriesCombinations = Combinations.BuildCombinations(this, separator);
         }
 
         private void BuildPermutations()

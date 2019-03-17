@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace permutations
 {
@@ -40,25 +41,24 @@ namespace permutations
 
         public void BuildPermutations()
         {   
-            SubCategories = Permutations.BuildPermutations(BaseString);
+            SubCategories = Permutations.BuildPermutations(BaseString).Distinct().ToList();
             SubCategories.Sort();
         }
 
-        public bool WillRotate()
+        public bool IsNextMoveReset()
         {
             return Index + 1 > MaxIndex;
         }
 
-        public int Increment()
+        public void MoveForward()
         {
             if(Index + 1 <= MaxIndex)
-                return Index++;
-            
-            Index = 0;
-            return Index;
+                Index++;
+            else
+                Index = 0;
         }
 
-        public string GetElement()
+        public string GetCurrent()
         {
             return SubCategories[Index];
         }
